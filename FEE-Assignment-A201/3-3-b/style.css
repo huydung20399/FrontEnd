@@ -1,0 +1,71 @@
+.container-fluid {
+    background-color: rgba(245,245,245,255);
+    padding: 5px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.heading {
+    height: 60px;
+    background-color: rgba(67,93,125,255);
+    padding: 0 20px;
+    color: #ffffff;
+}
+
+.heading .title h2 {
+    font-weight: 300;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button-common {
+    display: flex;
+    gap: 10px;
+}
+
+.button-common button {
+    height: 30px;
+    color: #ffffff;
+    border: none;
+    border-radius: 2px;
+}
+
+.button-common .delete {
+    background-color: rgba(220,53,69,255);
+}
+
+.button-common .add {
+    background-color: rgba(40,167,69,255);
+}
+
+.icon {
+    display: flex;
+    gap: 20px;
+}
+
+.icon .fa-pencil-alt {
+    color: rgba(255,199,33,255);
+}
+
+.icon .fa-trash {
+    color: rgba(220,53,69,255);
+}
+
+.table input[type="checkbox"] {
+    transform: scale(1.5);
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content {
+    color: rgba(67,93,125,255);
+}

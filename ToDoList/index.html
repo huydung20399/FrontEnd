@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <title>Todo List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Todo List</h2>
+        <form id="todo-form">
+            <input type="text" id="todo-input" placeholder="Enter a new item...">
+            <button id="add-item-btn" type="submit">Add Item</button>
+        </form>
+        <div id="error-message" style="color: red;"></div>
+        <ul id="todo-list"></ul>
+        <button id="clear-btn">Clear Items</button>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

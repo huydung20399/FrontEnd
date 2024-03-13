@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>7.1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Function to handle incrementing quantity
+            $(".btn-plus").on("click", function(){
+                var quantityInput = $(this).closest("tr").find(".quantity");
+                var quantity = parseInt(quantityInput.val());
+                quantityInput.val(quantity + 1);
+                updateTotal($(this));
+            });
+
+            // Function to handle decrementing quantity
+            $(".btn-minus").on("click", function(){
+                var quantityInput = $(this).closest("tr").find(".quantity");
+                var quantity = parseInt(quantityInput.val());
+                if (quantity > 1) {
+                    quantityInput.val(quantity - 1);
+                    updateTotal($(this));
+                } else {
+                    alert("Số lượng sản phẩm cần mua tối thiểu là 1");
+                }
+            });
+
+            // Function to update total
+            function updateTotal(element) {
+                var quantity = parseInt(element.closest("tr").find(".quantity").val());
+                var price = parseFloat(element.closest("tr").find(".price").text());
+                var total = quantity * price;
+                element.closest("tr").find(".total").text(total.toFixed(2));
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Ảnh sản phẩm</th>
+                <th>Tên sản phẩm</th>
+                <th>Mã sản phẩm</th>
+                <th>Đơn giá</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><img src="#" alt="Product Image"></td>
+                <td>Samsung galaxy S24</td>
+                <td>12345</td>
+                <td class="price">10.00</td>
+                <td><button class="btn-minus">-</button><input type="text" class="quantity" value="1"><button class="btn-plus">+</button></td>
+                <td class="total">10.00</td>
+            </tr>
+            <!-- Add more rows for additional products if needed -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

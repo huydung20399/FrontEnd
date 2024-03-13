@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <title>De thi mau</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 title">
+                <h3>QUẢN LÝ HỌC SINH <span>TRƯỜNG THPT ABC</span></h3>
+            </div>
+        </div>
+
+        <form>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="full-name">Họ và tên Học sinh</label>
+                        <input onblur="checkTextName('full-name')" type="text" name="name" id="full-name" placeholder="Họ và tên học viên">
+                        <span class="text-danger error-message error-full-name"></span>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="form-group">
+                        <label>Giới tính</label>
+                        <div class="row">
+                            <div class="col-3 radio-inline">
+                                <input value="Nam" type="radio" name="gender" id="male" placeholder="Họ và tên học viên">
+                                <label for="male">Nam</label>
+                            </div>
+                            <div class="col-3 radio-inline">
+                                <input value="Nữ" type="radio" name="gender" id="female" placeholder="Họ và tên học viên">
+                                <label for="female">Nữ</label>
+                            </div>
+                            <div class="col-3 radio-inline">
+                                <input value="Khác" type="radio" name="gender" id="other" placeholder="Họ và tên học viên">
+                                <label for="other">Khác</label>
+                            </div>
+                        </div>
+                        <span class="text-danger error-gender"></span>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="form-group">
+                        <label for="birthday">Ngày sinh</label>
+                        <input type="date" name="birthday" id="birthday">
+                        <span class="text-danger error-message error-birthday"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="classroom-block">Khối lớp học</label>
+                        <select id="classroom-block">
+                            <option value="" disabled selected>Chọn khối lớp học...</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                        <span class="text-danger error-message error-classroom-block"></span>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="classroom">Lớp học</label>
+                        <select id="classroom">
+                            <option value="" disabled selected>Chọn lớp học...</option>
+                            <option value="10A">10A</option>
+                            <option value="10B">10B</option>
+                            <option value="11A">11A</option>
+                            <option value="11B">11B</option>
+                            <option value="12A">12A</option>
+                            <option value="12B">12B</option>
+                        </select>
+                        <span class="text-danger error-message error-classroom"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="mark-math">Điểm môn toán</label>
+                        <input onblur="checkNumberMark('mark-math')" type="text" name="name" id="mark-math" placeholder="HTML vs CSS">
+                        <span class="text-danger error-message error-mark-math"></span>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="mark-physical">Điểm môn lý</label>
+                        <input onblur="checkNumberMark('mark-physical')" type="text" name="name" id="mark-physical" placeholder="JavaScript">
+                        <span class="text-danger error-message error-mark-physical"></span>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="mark-chemistry">Điểm môn hóa</label>
+                        <input onblur="checkNumberMark('mark-chemistry')" type="text" name="name" id="mark-chemistry" placeholder="jQuery">
+                        <span class="text-danger error-message error-mark-chemistry"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <button onclick="send()" type="button" class="btn btn-light button-submit">Lưu thông tin</button>
+                </div>
+            </div>
+        </form>
+
+        <div class="row">
+            <div class="col-12 title-list">
+                <h3>DANH SÁCH HỌC SINH</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <h6>Nhập tên Học sinh cần tìm kiếm</h6>
+            </div>
+
+            <div class="col-8">
+                <input onblur="checkTextName('search-name')" type="text" name="search-name" id="search-name" placeholder="Nhập tên học sinh...">
+                <span class="text-danger error-search-name"></span>
+            </div>
+
+            <div class="col-1 box-button-search">
+                <button onclick="validateFieldInput('search-name')" class="btn btn-success button-search" type="submit">Search</button>
+            </div>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Họ và tên</th>
+                    <th>Giới tính</th>
+                    <th>Ngày sinh</th>
+                    <th>Khối</th>
+                    <th>Lớp học</th>
+                    <th>M.Toán</th>
+                    <th>M.Lý</th>
+                    <th>M.Hóa</th>
+                    <th>Đ.TB</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

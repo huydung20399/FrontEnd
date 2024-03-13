@@ -1,0 +1,97 @@
+.container-fluid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form-left, .form-specific, .form-right,
+.form-permissions {
+    display: flex;
+    /*gap: 20px;*/
+}
+
+.main {
+    display: flex;
+}
+
+.form-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.title {
+    border-bottom: 2px solid rgba(242,188,205,255);
+    font-weight: bold;
+}
+
+.form-left, .form-right, .form-permissions {
+    flex-direction: column;
+}
+
+input {
+    height: 30px;
+}
+
+label, .title-attributes {
+    font-weight: 600;
+}
+
+.form-permissions select {
+    height: 30px;
+}
+
+.attributes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+}
+
+.footer {
+    background-color: rgba(236,236,237,255);
+    height: 50px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button-common {
+    display: flex;
+    gap: 20px;
+}
+
+.reset span {
+    margin-left: 10px;
+}
+
+.button-common button {
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.button-common .search {
+    background-color: rgba(212,38,94,255);
+    color: white;
+    border: none;
+}
+
+.custom-control-input:checked {
+    background-color: rgba(212,38,94,255);
+}
+
+.select-custom-width {
+    width: 100%;
+    height: 30px;
+}
+
+.button-common button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}

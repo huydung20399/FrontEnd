@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>2.1.a</title>
+</head>
+<body>
+    <div id="container">
+        <div id="content" class="common">
+            <div class="content-message">
+                <h2>ABOUT US</h2>
+                <p>KeyRevenueAdz is able to boost traffic to your website with thousands of real human instantly,
+                    you will get paid with stable and safe service with us, all member are benefit from long-term
+                    revenue sharing plan</p>
+            </div>
+            <div class="content-message">
+                <h2>BETTER PLANS</h2>
+                <p>No risk for the plan, because our benefit are earn from high quality advertising plan. Help our
+                    members to earn easy and Risk-free from KeyRevenueAdz</p>
+            </div>
+        </div>
+        <div id="enter-text" class="common">
+            <h2>GET IN TOUCH</h2>
+            <form>
+                <div id="information">
+                    <input type="text" placeholder="Name" id="name">
+                    <input type="text" placeholder="Email Address">
+                </div>
+                <div id="text">
+                    <input type="text" placeholder="Subject" id="subject">
+                    <input type="text" placeholder="Your Message" id="message">
+                </div>
+                <span class="information"></span>
+                <div id="submit">
+                    <button onclick="send()" type="button">SUBMIT YOUR MESSAGE</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <script>
+        function send() {
+            let nameElement = document.getElementById('name').value;
+            let inforElement = document.querySelector('.information');
+            let inputNew = document.createElement('input');
+            inputNew.setAttribute('type', 'text');
+            inputNew.value = nameElement;
+            inforElement.appendChild(inputNew);
+        }
+    </script>
+</body>
+</html>

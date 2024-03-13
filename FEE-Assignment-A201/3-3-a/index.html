@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <title>3.3.a</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row main">
+            <div class="col-lg-9">
+                <form class="form-1">
+                    <div class="row form-top">
+                        <div class="col-lg-9 form-left">
+                            <div class="title">Specific</div>
+                            <div class="form-specific">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label for="first-name">First name contains</label>
+                                            <input type="text" class="form-control" placeholder="First name" id="first-name">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="correspondence">Correspondence</label>
+                                            <input type="number" class="form-control" placeholder="Doesn't master" id="correspondence">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label for="last-name">Last name contains</label>
+                                            <input type="text" class="form-control" placeholder="Last name" id="last-name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="date-join">Date joined from</label>
+                                            <input type="date" class="form-control" id="date-join">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label for="email">Email contains</label>
+                                            <input type="email" class="form-control" placeholder="E-mail" id="email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="date-join-2">to</label>
+                                            <input type="date" class="form-control" id="date-join-2">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 form-right">
+                            <div class="title">Relative</div>
+                            <div class="form-team">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label for="team">Team</label>
+                                            <select name="team" class="form-select select-custom-width" id="team">
+                                                <option>0</option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-permissions">
+                        <div class="title">Permissions</div>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label for="group">Group</label>
+                                <select name="group" class="form-select select-custom-width" id="group"></select>
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="permissions">Permissions</label>
+                                <select name="permission" class="form-select select-custom-width" id="permissions"></select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="attributes">
+                    <div class="title">Attributes</div>
+                    <div class="active">
+                        <div class="title-attributes">Active</div>
+                        <form>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" name="active" id="active1">
+                                <label class="form-check-label" for="active1">Doesn't master</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" name="active" id="active2">
+                                <label class="form-check-label" for="active2">Yes</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" name="active" id="active3">
+                                <label class="form-check-label" for="active3">No</label>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="online-status">
+                        <div class="title-attributes">Online Status</div>
+                        <form>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" name="online-status" id="online1">
+                                <label class="form-check-label" for="online1">Doesn't master</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" name="online-status" id="online2">
+                                <label class="form-check-label" for="online2">Online</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" name="online-status" id="online3">
+                                <label class="form-check-label" for="online3">Away</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" name="online-status" id="online4">
+                                <label class="form-check-label" for="online4">Offline</label>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="superuser">
+                        <div class="title-attributes">Superuser status</div>
+                        <form>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" name="status" id="super1">
+                                <label class="form-check-label" for="super1">Doesn't master</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" name="status" id="super2">
+                                <label class="form-check-label" for="super2">Yes</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" name="status" id="super3">
+                                <label class="form-check-label" for="super3">No</label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 footer">
+                <div class="reset">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>Reset filter</span>
+                </div>
+                <div class="button-common">
+                    <button type="reset">Cancel</button>
+                    <button type="submit" class="search">
+                        <i class="fas fa-search"></i>
+                        <span>Search</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

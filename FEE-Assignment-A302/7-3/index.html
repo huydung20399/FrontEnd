@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <title>7.3</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6" id="personal-infor">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Personal Infor</h2>
+                    </div>
+                </div>
+                <form id="personal-form" class="form-common">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="first-name">First Name</label>
+                                <input onblur="checkTextName('first-name')" type="text" name="first-name" id="first-name" placeholder="First name...">
+                                <span class="error-message error-first-name"></span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="last-name">Last Name</label>
+                                <input onblur="checkTextName('last-name')" type="text" name="last-name" id="last-name" placeholder="Last name...">
+                                <span class="error-message error-last-name"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input onblur="checkEmail('email')" type="email" name="email" id="email" placeholder="example@fsoft.com.vn">
+                                <span class="error-message error-email"></span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input onblur="checkPhone('phone')" type="text" name="phone" id="phone" placeholder="Phone...">
+                                <span class="error-message error-phone"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <input onblur="checkTextName('address')" type="text" name="address" id="address" placeholder="Address...">
+                                <span class="error-message error-address"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input onblur="checkTextName('city')" type="text" name="email" id="city" placeholder="City...">
+                                <span class="error-message error-city"></span>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label for="state">State</label>
+                                <select id="state">
+                                    <option value="choose">Choose...</option>
+                                    <option value="california">California</option>
+                                    <option value="florida">Florida</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-group">
+                                <label for="zip-code">Zip code</label>
+                                <input onblur="checkZipCode('zip-code')" type="text" name="phone" id="zip-code">
+                                <span class="error-message error-zip-code"></span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" name="online-status" id="check">
+                            <label class="form-check-label" for="check">Check me out</label>
+                            <span class="error-message error-check"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 button-submit">
+                        <button onclick="send()" type="submit" class="btn bg-primary text-white" id="button-sign-in">Sign in</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-6" id="payment-infor">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Personal Infor</h2>
+                    </div>
+                </div>
+
+                <form id="payment-form" class="form-common">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="name-on-card">Name on Card</label>
+                                <input onblur="checkTextName('name-on-card')" type="text" name="name-on-card" id="name-on-card" placeholder="...">
+                                <span class="error-message error-name-on-card"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="credit">Credit card number</label>
+                                <input onblur="checkCreditNumber('credit')" type="email" name="credit" id="credit" placeholder="xxxx-xxxx-xxxx-xxxx">
+                                <span class="error-message error-credit"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label for="month">Exp Month</label>
+                                <input onblur="checkMonth('month')" type="text" name="month" id="month" placeholder="...">
+                                <span class="error-message error-month"></span>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label for="year">Exp Year</label>
+                                <input onblur="checkYear('year')" type="text" name="year" id="year" placeholder="...">
+                                <span class="error-message error-year"></span>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label for="cvv">CVV</label>
+                                <input onblur="checkCVV('cvv')" type="text" name="cvv" id="cvv">
+                                <span class="error-message error-cvv"></span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="row">
+                    <div class="col-12 accept">
+                        <p>Accepted Cards</p>
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-discover"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Zip-code</th>
+                    <th>Name on card</th>
+                    <th>Credit card number</th>
+                    <th>Exp Month</th>
+                    <th>Exp Year</th>
+                    <th>CVV</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <p>Bạn có chắc muốn xóa Record Data này không?</p>
+            <div class="modal-buttons">
+                <button id="confirm-yes">Yes</button>
+                <button id="confirm-no">No</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

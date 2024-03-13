@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="js/bootstrap.min.css" >
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="js/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <title>Final Exam - Ho Huy Dung</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-5">
+                <form>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <h5>PHIẾU XUẤT KHO</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <label for="ma-san-pham">Mã sản phẩm</label>
+                                    </div>
+                                    <div class="col-9">
+                                        <input type="text" name="ma-san-pham" id="ma-san-pham" disabled>
+                                    </div>
+                                    <div class="col-12">
+                                        <span class="error-ma-san-pham text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="ten-san-pham">Tên sản phẩm</label>
+                                <input type="text" name="ten-san-pham" id="ten-san-pham" disabled>
+                                <span class="error-ten-san-pham text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="danh-muc-san-pham">Danh mục sản phẩm</label>
+                                <input type="text" name="danh-muc-san-pham" id="danh-muc-san-pham" disabled>
+                                <span class="error-danh-muc-san-pham text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="don-gia">Đơn giá (VNĐ)</label>
+                                <input onblur="checkValidateNumber('don-gia')" type="text" name="don-gia" id="don-gia">
+                                <span class="error-don-gia text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label for="so-luong-xuat-kho">Số lượng xuất kho</label>
+                                <input type="number" name="so-luong-xuat-kho" id="so-luong-xuat-kho">
+                                <span class="error-so-luong-xuat-kho text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label for="ngay-xuat-kho">Ngày xuất kho</label>
+                                <input type="date" name="ngay-xuat-kho" id="ngay-xuat-kho">
+                                <span class="error-ngay-xuat-kho text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-4 button">
+                            <button onclick="send()" id="button-xuat-kho" class="btn btn-success" type="button" disabled>Xuất kho</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-7">
+                <div class="row">
+                    <div class="col-12">
+                        <h5>DANH SÁCH SẢN PHẨM</h5>
+                    </div>
+                </div>
+
+                <table class="table danh-sach-san-pham">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Mã SP</th>
+                            <th>Tên SP</th>
+                            <th>SL còn</th>
+                            <th>Danh mục SP</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td class="ds-ma-san-pham">100001</td>
+                            <td class="ds-ten-san-pham">Vsmart Aris pro</td>
+                            <td class="ds-so-luong-con">25</td>
+                            <td class="ds-danh-muc-san-pham">Điện thoại</td>
+                            <td>
+                                <button type="button" class="btn btn-success">
+                                    <i class="fas fa-shopping-cart edit"></i>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td class="ds-ma-san-pham">100002</td>
+                            <td class="ds-ten-san-pham">Iphone 10</td>
+                            <td class="ds-so-luong-con">20</td>
+                            <td class="ds-danh-muc-san-pham">Điện thoại</td>
+                            <td>
+                                <button type="button" class="btn btn-success">
+                                    <i class="fas fa-shopping-cart edit"></i>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td class="ds-ma-san-pham">100004</td>
+                            <td class="ds-ten-san-pham">Samsung Smart TV</td>
+                            <td class="ds-so-luong-con">50</td>
+                            <td class="ds-danh-muc-san-pham">Tivi</td>
+                            <td>
+                                <button type="button" class="btn btn-success">
+                                    <i class="fas fa-shopping-cart edit"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" class="text-center">TỔNG SỐ LƯỢNG CÒN</td>
+                            <td id="tong-so-luong-con">95</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+
+        <table class="table danh-sach-xuat-kho">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Mã SP</th>
+                    <th>Tên SP</th>
+                    <th>Danh mục SP</th>
+                    <th>SL Xuất</th>
+                    <th>Đơn giá</th>
+                    <th>Ngày xuất</th>
+                    <th>Thành tiền</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4" class="text-center">TỔNG SỐ LƯỢNG XUẤT KHO</td>
+                    <td id="tong-so-luong-xuat-kho"></td>
+                    <td colspan="2" class="text-center">TỔNG TIỀN SỐ LƯỢNG THÀNH TIỀN</td>
+                    <td id="tong-thanh-tien"></td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+</html>

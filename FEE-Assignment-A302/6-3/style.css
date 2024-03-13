@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css?family=Kaushan+Script");
+.container {
+    background-color: rgba(238,238,238,255);
+    font-family: 'Kaushan Script', cursive;
+}
+
+.menu button {
+    border: 2px solid black;
+    color: #000013;
+    background-color: rgba(238,238,238,255);
+}
+
+.menu {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.input-group {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.input-group input {
+    width: 500px;
+    border: 1px solid rgba(239,121,152,255);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.input-group button {
+    border-radius: 5px 0 0 5px;
+    background-color: rgba(239,121,152,255);
+    border: 1px solid rgba(239,121,152,255);
+}
+
+.card-columns {
+    margin-top: 20px;
+}
+
+.card-columns img {
+    width: 100%;
+}
+
+.card-body p {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+/*.card-columns {*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    justify-content: space-between; !* Căn trái và phải cho các cột *!*/
+/*}*/
+
+/*.card {*/
+/*    width: calc(50% - 10px); !* Độ rộng của mỗi cột, trừ đi khoảng cách giữa các cột *!*/
+/*    margin-bottom: 20px;*/
+/*}*/

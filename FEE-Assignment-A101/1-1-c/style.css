@@ -1,0 +1,104 @@
+#container {
+    background-color: rgba(221,221,222,255);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px 10px 10px 10px;
+}
+
+#box-1 {
+    height: 40px;
+    background-color: rgba(255,99,71,255);
+    color: white;
+}
+
+#box-2 {
+    height: 30px;
+    display: flex;
+    gap: 10px;
+    color: white;
+}
+
+#box-2-1 {
+    width: 70%;
+    background-color: rgba(138,43,226,255);
+}
+
+#box-2-2 {
+    width: 30%;
+    background-color: rgba(138,43,226,255);
+}
+
+#box-3 {
+    height: 200px;
+    display: flex;
+    gap: 10px;
+    color: white;
+}
+
+#box-3-1 {
+    width: 70%;
+    display: flex;
+    gap: 10px;
+}
+
+#box-3-1 .frame {
+    flex-grow: 1;
+    max-width: 100%;
+    background-color: rgba(255,99,71,255);
+}
+
+#box-3-2 {
+    width: 30%;
+    display: flex;
+    gap: 10px;
+}
+
+#rectangle-30, #rectangle-70 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#rectangle-30 {
+    width: 30%;
+}
+
+#rectangle-30 .order {
+    flex-grow: 1;
+    max-width: 100%;
+    background-color: rgba(3,245,245,255);
+}
+
+#rectangle-70 {
+    width: 70%;
+}
+
+#rectangle-70 .order {
+    flex-grow: 1;
+    max-width: 100%;
+    background-color: rgba(127,255,0,255);
+}
+
+#box-4 {
+    height: 30px;
+    background-color: rgba(138,43,226,255);
+}
+
+#box-5 {
+    height: 200px;
+    display: flex;
+    gap: 10px;
+}
+
+#box-5 .frame {
+    flex-grow: 1;
+    max-width: 100%;
+    background-color: rgba(255,99,71,255);
+}
+
+#box-6 {
+    height: 40px;
+    background-color: rgba(165,42,42,255);
+    color: white;
+}

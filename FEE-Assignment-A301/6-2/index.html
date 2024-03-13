@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <title>6.2</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row title">
+            <div class="col-12 text-center">
+                <h2>To Do List</h2>
+            </div>
+        </div>
+
+        <form id="form-input">
+            <div class="form-group">
+                <input type="text" placeholder="Name item..." id="input-item">
+                <button id="btn-add" class="btn-success" type="submit">Add item</button>
+            </div>
+            <span class="form-message"></span>
+        </form>
+
+        <div class="item">
+            <ul id="data"></ul>
+        </div>
+
+        <div class="button-clear">
+            <button id="btn-clear" class="btn btn-danger">Clear Item</button>
+        </div>
+    </div>
+    <script src="main.js"></script>
+    <script>
+        Validator({
+            form: '#form-input',
+            rules: [Validator.isRequired('#input-item')]
+        })
+    </script>
+</body>
+</html>

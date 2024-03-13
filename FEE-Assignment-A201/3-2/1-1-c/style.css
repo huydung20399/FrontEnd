@@ -1,0 +1,76 @@
+body {
+    background-color: rgba(221,221,222,255);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.orange {
+    background-color: rgba(255,99,71,255);
+}
+
+.frame-40 {
+    height: 40px;
+}
+
+.row.box-3 {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+
+.purple {
+    background-color: rgba(138,43,226,255);
+}
+
+.frame-30 {
+    height: 30px;
+}
+
+.c30 {
+    width: 30%;
+}
+
+.c70 {
+    width: 70%;
+}
+
+.frame-200 {
+    height: 200px;
+}
+
+.box-left, .box-right {
+    display: flex;
+    gap: 10px;
+}
+
+.square, .rectangle {
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.box-30, .box-70 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.box-30 .rectangle {
+    background-color: rgba(3,245,245,255);
+}
+
+.box-70 .rectangle {
+    background-color: rgba(127,255,0,255);
+}
+
+.box-5 {
+    display: flex;
+    gap: 10px;
+}
+
+.red {
+    background-color: rgba(165,42,42,255);
+}

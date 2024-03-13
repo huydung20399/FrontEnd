@@ -1,0 +1,11 @@
+.green {
+    background-color: rgba(40,167,69,255);
+}
+
+.yellow {
+    background-color: rgba(255,193,7,255);
+}
+
+.row {
+    margin-bottom: 10px;
+}

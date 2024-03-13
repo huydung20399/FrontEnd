@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <title>De thi mau JQuery</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 title">
+            <h3>QUẢN LÝ HỌC SINH <span>TRƯỜNG THPT ABC</span></h3>
+        </div>
+    </div>
+
+    <form>
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="full-name">Họ và tên Học sinh</label>
+                    <input type="text" name="name" id="full-name" placeholder="Họ và tên học viên">
+                    <span class="text-danger error-message error-full-name"></span>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="form-group">
+                    <label>Giới tính</label>
+                    <div class="row">
+                        <div class="col-3 radio-inline">
+                            <input value="Nam" type="radio" name="gender" id="male" placeholder="Họ và tên học viên">
+                            <label for="male">Nam</label>
+                        </div>
+                        <div class="col-3 radio-inline">
+                            <input value="Nữ" type="radio" name="gender" id="female" placeholder="Họ và tên học viên">
+                            <label for="female">Nữ</label>
+                        </div>
+                        <div class="col-3 radio-inline">
+                            <input value="Khác" type="radio" name="gender" id="other" placeholder="Họ và tên học viên">
+                            <label for="other">Khác</label>
+                        </div>
+                    </div>
+                    <span class="text-danger error-gender"></span>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="birthday">Ngày sinh</label>
+                    <input type="date" name="birthday" id="birthday">
+                    <span class="text-danger error-message error-birthday"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="classroom-block">Khối lớp học</label>
+                    <select id="classroom-block">
+                        <option value="" disabled selected>Chọn khối lớp học...</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    <span class="text-danger error-message error-classroom-block"></span>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="classroom">Lớp học</label>
+                    <select id="classroom">
+                        <option value="" disabled selected>Chọn lớp học...</option>
+                        <option value="10A">10A</option>
+                        <option value="10B">10B</option>
+                        <option value="11A">11A</option>
+                        <option value="11B">11B</option>
+                        <option value="12A">12A</option>
+                        <option value="12B">12B</option>
+                    </select>
+                    <span class="text-danger error-message error-classroom"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="mark-math">Điểm môn toán</label>
+                    <input type="text" name="name" id="mark-math" placeholder="HTML vs CSS">
+                    <span class="text-danger error-message error-mark-math"></span>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="mark-physical">Điểm môn lý</label>
+                    <input type="text" name="name" id="mark-physical" placeholder="JavaScript">
+                    <span class="text-danger error-message error-mark-physical"></span>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="mark-chemistry">Điểm môn hóa</label>
+                    <input type="text" name="name" id="mark-chemistry" placeholder="jQuery">
+                    <span class="text-danger error-message error-mark-chemistry"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <button type="button" class="btn btn-light button-submit">Lưu thông tin</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="row">
+        <div class="col-12 title-list">
+            <h3>DANH SÁCH HỌC SINH</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <h6>Nhập tên Học sinh cần tìm kiếm</h6>
+        </div>
+
+        <div class="col-8">
+            <input type="text" name="search-name" id="search-name" placeholder="Nhập tên học sinh...">
+            <span class="text-danger error-search-name"></span>
+        </div>
+
+        <div class="col-1 box-button-search">
+            <button class="btn btn-success button-search" type="submit">Search</button>
+        </div>
+    </div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Họ và tên</th>
+            <th>Giới tính</th>
+            <th>Ngày sinh</th>
+            <th>Khối</th>
+            <th>Lớp học</th>
+            <th>M.Toán</th>
+            <th>M.Lý</th>
+            <th>M.Hóa</th>
+            <th>Đ.TB</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+
+        <tbody></tbody>
+    </table>
+</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('.button-submit').click(function () {
+                if (validate()) {
+                    addData();
+                }
+            })
+
+            // validate các trường
+            function validate() {
+                let isValid = true;
+                let arrayFieldInput = ['full-name', 'birthday', 'classroom-block', 'classroom', 'mark-math', 'mark-physical', 'mark-chemistry'];
+                arrayFieldInput.forEach(function (fieldName) {
+                    if (!validateFieldInput(fieldName)){
+                        isValid = false;
+                    }
+                })
+
+                if (!validateGenderSelection()) {
+                    isValid = false;
+                }
+                return isValid;
+            }
+
+            function validateFieldInput(fieldName) {
+                let value = $('#' + fieldName).val();
+                let errorMessage = 'Vui lòng nhập vào trường này!';
+                let errorElement = $('.error-' + fieldName);
+
+                if (value === '') {
+                    errorElement.text(errorMessage);
+                    return false;
+                } else {
+                    errorElement.text('');
+                    return true;
+                }
+            }
+
+            function validateGenderSelection() {
+                let genderInputs = $('input[name="gender"]');
+                let errorMessage = 'Vui lòng chọn giới tính!';
+                let errorElement = $('.error-gender');
+
+                let isSelected = false;
+                genderInputs.each(function() {
+                    if ($(this).is(':checked')) {
+                        isSelected = true;
+                    }
+                });
+
+                if (!isSelected) {
+                    errorElement.text(errorMessage);
+                    return false;
+                } else {
+                    errorElement.text('');
+                    return true;
+                }
+            }
+
+            // xóa lỗi khi bắt đầu nhập vào ô input, select
+            $('input, select').on('input change', function() {
+                clearError(this.id);
+            });
+
+            $('input[name="gender"]').click(function() {
+                clearError(this.name);
+            });
+
+            function clearError(fieldName) {
+                $('.error-' + fieldName).text('');
+            }
+
+            // validate cho trường nhập tên
+            function validateTextName(value) {
+                let regex = new RegExp('^\\p{L}*(\\s\\p{L}*)*$', 'u');
+                return regex.test(value);
+            }
+
+            function checkTextName(fieldName) {
+                let value = $('#' + fieldName).val();
+                let message = 'Vui lòng nhập đúng mẫu của trường này!';
+                let errorElement = $(`.error-${fieldName}`);
+                if (!validateTextName(value)) {
+                    errorElement.text(message);
+                } else {
+                    errorElement.text('');
+                }
+            }
+
+            $('#full-name').blur(function () {
+                checkTextName('full-name');
+            });
+
+            // validate trường nhập điểm số
+            function validateNumberMark(value) {
+                let regex = /^(10(\.0{1,2})?|[0-9](\.[0-9]{1,2})?)$/;
+                return regex.test(value);
+            }
+
+            function checkNumberMark(fieldName) {
+                let value = $('#' + fieldName).val();
+                let message = 'Vui lòng nhập đúng điểm số, không được viết quá 2 số thập phân';
+                let errorElement = $(`.error-${fieldName}`);
+                if (!validateNumberMark(value)) {
+                    errorElement.text(message);
+                } else {
+                    errorElement.text('');
+                }
+            }
+
+            let arrayInputMark = ['mark-math', 'mark-physical', 'mark-chemistry'];
+            arrayInputMark.forEach(mark => {
+                $('#' + mark).blur(function () {
+                    checkNumberMark(mark);
+                })
+            })
+
+            // thêm data vào table
+            let numericalOrder = 0;
+            function addData() {
+                let inputs = $('input');
+                let selects = $('select');
+
+                let valueFullName = $('#full-name').val();
+
+                let genderInputs = $('input[name="gender"]');
+                let valueGender = '';
+                genderInputs.each(function () {
+                    if ($(this).prop('checked')) {
+                        valueGender = $(this).val();
+                    }
+                })
+                let valueBirthday = $('#birthday').val();
+                let valueClassroomBlock = $('#classroom-block').val();
+                let valueClassroom = $('#classroom').val();
+                let valueMarkMath = parseFloat($('#mark-math').val());
+                let valueMarkPhysical = parseFloat($('#mark-physical').val());
+                let valueMarkChemistry = parseFloat($('#mark-chemistry').val());
+                let average = (valueMarkMath + valueMarkPhysical + valueMarkChemistry) / 3;
+
+                let studentData = {
+                    fullName: valueFullName,
+                    gender: valueGender,
+                    birthDay: valueBirthday,
+                    classroomBlock: valueClassroomBlock,
+                    classroom: valueClassroom,
+                    math: valueMarkMath,
+                    physical: valueMarkPhysical,
+                    chemistry: valueMarkChemistry,
+                    avg: average.toFixed(2)
+                }
+                numericalOrder++;
+                addToTable(studentData, numericalOrder);
+
+                inputs.each(function () {
+                    $(this).val('');
+                })
+
+                selects.each(function () {
+                    $(this).val('');
+                })
+
+                genderInputs.prop('checked', false);
+            }
+
+            function addToTable(student, numericalOrder) {
+                let tableBodyElement = $('.table tbody');
+                let rowData = $('<tr></tr>');
+                rowData.html(`
+                    <td>${numericalOrder}</td>
+                    <td>${student.fullName}</td>
+                    <td>${student.gender}</td>
+                    <td>${student.birthDay}</td>
+                    <td>${student.classroomBlock}</td>
+                    <td>${student.classroom}</td>
+                    <td>${student.math}</td>
+                    <td>${student.physical}</td>
+                    <td>${student.chemistry}</td>
+                    <td>${student.avg}</td>
+                    <td class="action">
+                        <button type="button" class="btn btn-outline-warning">
+                            <i class="far fa-edit edit"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-danger">
+                            <i class="far fa-trash-alt delete"></i>
+                        </button>
+                    </td>
+                `);
+                tableBodyElement.append(rowData);
+            }
+
+            // chức năng sửa và xóa từng row
+            let tableElement = $('.table');
+            let buttonSubmit = $('.button-submit');
+            tableElement.on('click', function (e) {
+                if ($(e.target).hasClass('delete')) {
+                    // Lấy hàng cần xóa, e.target sẽ trả về giá element i, gọi 3 lần parent để tới thẻ tr (i -> button -> td -> tr)
+                    // let rowToDelete = e.target.parentElement.parentElement.parentElement;
+
+                    // Lấy hàng cần xóa, bằng cách sử dụng closest() để tìm thẻ cha gần nhất có class là 'row'
+                    let rowToDelete = $(e.target).closest('tr');
+
+                    // Hiển thị hộp thoại confirm để xác nhận xóa
+                    let confirmation = confirm('Bạn có chắc muốn xóa Row thông tin này không?');
+
+                    // Nếu người dùng nhấn OK trong confirm, xóa hàng
+                    if (confirmation) {
+                        rowToDelete.remove();
+                    }
+                } else if ($(e.target).hasClass('edit')) {
+                    buttonSubmit.text('Cập nhật thông tin');
+                    let row = $(e.target).closest('tr');
+
+                    // Lấy các ô td trong hàng (chỉ từ ô thứ 1 đến ô thứ 8)
+                    let cells = row.find('td:lt(8)');
+                    let values = [];
+
+                    cells.each((index, cell) => {
+                        let input = $(cell).find('form input, form select');
+                        if (input.length) {
+                            values.push(input.val());
+                        } else {
+                            values.push($(cell).text());
+                        }
+                    });
+
+                    let inputElements = $('form input, form select');
+                    inputElements.each((input, index) => {
+                        input.val(values[index + 1]);
+                    })
+
+                    // xóa hàng được edit
+                    $(e.target).closest('tr').remove();
+                }
+
+                // xử lý sự kiện: trả lại nút lưu thông tin sau khi đã cập nhật xong
+                buttonSubmit.on('click', function () {
+                    if (buttonSubmit.hasClass('button-submit')) {
+                        buttonSubmit.text('Lưu thông tin');
+                    }
+                })
+            })
+
+        })
+
+        // let tableElement = document.querySelector('.table');
+        // let buttonSubmit = document.querySelector('.button-submit');
+        // tableElement.addEventListener('click', function(e) {
+        //     if (e.target.classList.contains('delete')) {
+        //         // // Lấy hàng cần xóa, e.target sẽ trả về giá element i, gọi 3 lần parent để tới thẻ tr (i -> button -> td -> tr)
+        //         // let rowToDelete = e.target.parentElement.parentElement.parentElement;
+        //         //
+        //         // // Hiển thị hộp thoại confirm để xác nhận xóa
+        //         // let confirmation = confirm('Bạn có chắc muốn xóa Row thông tin này không?');
+        //         //
+        //         // // Nếu người dùng nhấn OK trong confirm, xóa hàng
+        //         // if (confirmation) {
+        //         //     rowToDelete.remove();
+        //         // }
+        //     } else if (e.target.classList.contains('edit')) {
+        //         buttonSubmit.innerText = 'Cập nhật thông tin';
+        //         // Lấy row hiện tại
+        //         let row = e.target.closest('tr');
+        //
+        //         // Lấy các ô td trong hàng (chỉ từ ô thứ 1 đến ô thứ 8)
+        //         let cells = row.querySelectorAll('td:nth-child(-n+8)');
+        //         let values = [];
+        //
+        //         // Lặp qua các ô td trong hàng và lấy giá trị tương ứng
+        //         cells.forEach((cell) => {
+        //             // Lấy input hoặc select trong ô
+        //             let input = cell.querySelector('form input, form select');
+        //             if (input) {
+        //                 values.push(input.value);
+        //             } else {
+        //                 values.push(cell.textContent);
+        //             }
+        //         });
+        //
+        //         // Lấy các phần tử input và select trong form
+        //         let inputElements = document.querySelectorAll('form input, form select');
+        //
+        //         // Gán các giá trị từ hàng vào các input và select tương ứng
+        //         inputElements.forEach((input, index) => {
+        //             // Chú ý rằng chúng ta bắt đầu từ chỉ mục 0 vì các ô input/select trong form được đánh số từ 0
+        //             input.value = values[index + 1];
+        //         });
+        //         e.target.parentElement.parentElement.parentElement.remove();
+        //     }
+        // });
+
+        // xử lý select chọn lớp học
+        // Ẩn tất cả các tùy chọn trong select của lớp học ban đầu
+        document.querySelectorAll('#classroom option').forEach(option => {
+            option.style.display = 'none';
+        });
+
+        // Lắng nghe sự kiện change trên select của khối lớp học
+        document.getElementById('classroom-block').addEventListener('change', function() {
+            // Lấy giá trị của select của khối lớp học
+            let selectedBlock = this.value;
+
+            // Lấy tất cả các option trong select của lớp học
+            let classroomOptions = document.getElementById('classroom').querySelectorAll('option');
+
+            // Ẩn tất cả các option trước khi hiển thị các option tương ứng
+            classroomOptions.forEach(option => {
+                option.style.display = 'none';
+            });
+
+            // Hiển thị các option tương ứng với khối lớp học đã chọn
+            document.querySelectorAll('#classroom option[value^="' + selectedBlock + '"]').forEach(option => {
+                option.style.display = 'block';
+            });
+        });
+
+        // check chọn ngày nhỏ hơn ngày hiện tại
+        // Lấy ngày hiện tại
+        let currentDate = new Date().toISOString().split('T')[0];
+
+        // Đặt ngày hiện tại là ngày tối đa cho ô input date
+        document.getElementById('birthday').max = currentDate;
+    </script>
+</body>
+</html>

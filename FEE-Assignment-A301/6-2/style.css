@@ -1,0 +1,72 @@
+.container {
+    background-color: rgba(245,245,245,255);
+}
+
+input, button {
+    height: 30px;
+    border: 1px solid green;
+}
+
+input {
+    width: 800px;
+}
+
+.form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+#form-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.data, .button-clear, #item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.button-clear button {
+    display: flex;
+    align-items: center;
+}
+
+ul {
+    margin-top: 20px;
+    list-style-type: none;
+    padding: 0;
+}
+
+#data span {
+    margin-right: 700px;
+}
+
+#data i {
+    margin-left: 10px;
+}
+
+.icon {
+    float: right;
+}
+
+.edit:hover, .delete:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.update {
+    border: 1px solid green;
+    background-color: green;
+    color: white;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+}

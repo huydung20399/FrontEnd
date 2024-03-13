@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Final Test-Ho Huy Dung</title>
+</head>
+<body>
+<div class="main">
+    <div class="header">
+        <div class="header-left">Management Page</div>
+        <div class="header-right">
+            <div class="circle">
+                <div class="text-circle">A</div>
+            </div>
+            <div class="user">
+                <div class="text-user">User A</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="order-form">
+            <div class="form-title"><span>Order</span> Form</div>
+            <form>
+                <div class="product-category">Product Category
+                    <select name="product" id="product">
+                        <option>--Choose Product Category--</option>
+                        <option>Samsung</option>
+                        <option>Iphone</option>
+                        <option>Xiaomi</option>
+                    </select>
+                </div>
+                <div class="product-name">Product Name
+                    <input type="text" placeholder="Enter product name...">
+                </div>
+                <div class="quantity">Quantity
+                    <input type="number" placeholder="Enter quantity...">
+                </div>
+                <div class="price">Price
+                    <input type="text" placeholder="Enter price...">
+                </div>
+                <div class="date">Date
+                    <input type="date" placeholder="Enter date...">
+                </div>
+                <div class="box-button">
+                    <button type="submit" class="button-order">Order Product</button>
+                    <button type="submit" class="button-cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+        <div class="order-list">
+            <div class="list-title"><span>Order</span> List</div>
+            <table>
+                <thead class="border-top">
+                    <th>##</th>
+                    <th>Product Category</th>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                    <th>Subtotal</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="value-center">1</td>
+                    <td class="value-left">SmartPhone</td>
+                    <td class="value-left">Samsung Galaxy 2</td>
+                    <td class="value-center">2</td>
+                    <td class="value-right">45.000.000</td>
+                    <td class="value-left">In-Process</td>
+                    <td class="value-right">90.000.000</td>
+                    <td class="image">
+                        <div class="img"></div>
+                    </td>
+                    <td><div class="action">
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="value-center">2</td>
+                    <td class="value-left">SmartPhone</td>
+                    <td class="value-left">Iphone 12</td>
+                    <td class="value-center">1</td>
+                    <td class="value-right">20.000.000</td>
+                    <td class="value-left">In-Process</td>
+                    <td class="value-right">20.000.000</td>
+                    <td class="image">
+                        <div class="img"></div>
+                    </td>
+                    <td>
+                        <div class="action">
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="border-bottom">
+                    <td class="value-center">3</td>
+                    <td class="value-left">Laptop</td>
+                    <td class="value-left">Macbook Air M1</td>
+                    <td class="value-center">1</td>
+                    <td class="value-right">40.000.000</td>
+                    <td class="value-left">Done</td>
+                    <td class="value-right">40.000.000</td>
+                    <td class="image">
+                        <div class="img"></div>
+                    </td>
+                    <td><div class="action">
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3"><p style="font-weight: bold; text-align: right; padding-right: 5px">Total Quantity:</td>
+                    <td class="value-center">4</td>
+                    <td colspan="2"><p style="font-weight: bold; text-align: right; padding-right: 5px">Total:</td>
+                    <td class="value-right">150.000.000</td>
+                    <td class="empty-cell"></td>
+                    <td class="empty-cell"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>(@) 2023, Copyright By Ho Huy Dung, Class QN23_FRF_FIF_01</p>
+    </div>
+</div>
+</body>
+</html>

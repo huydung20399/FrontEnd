@@ -1,0 +1,69 @@
+#container {
+    background-color: rgba(235,161,2,255);
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    color: white;
+}
+
+#content {
+    display: flex;
+    gap: 20px;
+}
+
+.content-message, .common {
+    flex: 1;
+}
+
+.content-message {
+    display: flex;
+    flex-direction: column;
+}
+
+#enter-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#information {
+    display: flex;
+    gap: 10px;
+}
+
+#information input {
+    flex-grow: 1;
+    height: 30px;
+}
+
+#text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#text #subject {
+    height: 30px;
+}
+
+#text #message {
+    height: 50px;
+}
+
+#submit button {
+    background-color: black;
+    color: white;
+    height: 50px;
+}
+
+#submit button:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

@@ -1,0 +1,13 @@
+.container {
+    color: rgba(97,97,97,255);
+}
+
+.header {
+    text-align: center;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
